@@ -1,17 +1,7 @@
-var mysql = require("mysql");
-var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : 'root',
-    database : 'academy1'
-
-});
-
-
 let session = require('express-session');
 
 
-
+let  connection= require('../db') ;
 
 exports.form = function(req, res){
     connection.query("select * from formation;", function(error, result){
